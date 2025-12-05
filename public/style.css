@@ -1,301 +1,320 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
-    width: 100%;
-    max-width: 1000px; /* Увеличили ширину */
-    background: white;
-    display: flex;
-    flex-direction: row; /* Теперь в ряд */
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    height: 90vh; /* Ограничим высоту контейнера */
-    margin-top: 20px;
+  width: 100%;
+  max-width: 1000px; /* Увеличили ширину */
+  background: white;
+  display: flex;
+  flex-direction: row; /* Теперь в ряд */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  height: 90vh; /* Ограничим высоту контейнера */
+  margin-top: 20px;
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0%;
-    height: 60px;
-    box-sizing: border-box;
-    z-index: 10;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  height: 80px;
+  box-sizing: border-box;
+  z-index: 10;
 }
 
 .burger-btn {
-    display: none;
-    position: absolute;
-    right: 15px;
-    top: 14px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    background: transparent;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 20;
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 20;
 }
 
 body {
-    padding-top: 60px; /* Отступ под хедер */
-    align-items: flex-start; /* Чтобы не растягивало на весь экран */
+  padding-top: 60px; /* Отступ под хедер */
+  align-items: flex-start; /* Чтобы не растягивало на весь экран */
 }
 
 #game-container {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 20px;
-    border-right: 1px solid #eee;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  border-right: 1px solid #eee;
 }
 
 .profile-panel {
-    flex: 1;
-    background-color: #fdfdfd;
-    padding: 20px;
-    overflow-y: auto;
-    min-width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1;
+  background-color: #fdfdfd;
+  padding: 20px;
+  overflow-y: auto;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .profile-panel.hidden {
-    display: none;
+  display: none;
 }
 
 .profile-panel h2 {
-    margin-top: 0;
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
 }
 
 .stats-group h3 {
-    font-size: 1rem;
-    color: #7f8c8d;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .stat-item {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
 }
 
 .stat-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
 }
 
 .stat-bar-bg {
-    background-color: #ecf0f1;
-    height: 6px;
-    border-radius: 3px;
-    overflow: hidden;
+  background-color: #ecf0f1;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .stat-bar-fill {
-    height: 100%;
-    background-color: #3498db;
-    transition: width 0.5s ease;
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.5s ease;
 }
 
 /* Цвета для ценностей */
 #values-list .stat-bar-fill {
-    background-color: #2ecc71;
+  background-color: #2ecc71;
 }
 
 /* Цвета для проблем */
 #problems-list .stat-bar-fill {
-    background-color: #e74c3c;
+  background-color: #e74c3c;
 }
 
-
 .story-log {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .message {
-    padding: 15px;
-    border-radius: 8px;
-    line-height: 1.5;
-    max-width: 85%;
-    animation: fadeIn 0.3s ease;
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 1.5;
+  max-width: 85%;
+  animation: fadeIn 0.3s ease;
 }
 
 .message.narrator {
-    background-color: #eef2f5;
-    align-self: flex-start;
-    border-left: 4px solid #3498db;
+  background-color: #eef2f5;
+  align-self: flex-start;
+  border-left: 4px solid #3498db;
 }
 
 .message.user {
-    background-color: #dcf8c6;
-    align-self: flex-end;
-    text-align: right;
-    border-right: 4px solid #2ecc71;
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+  border-right: 4px solid #2ecc71;
 }
 
 .message.error {
-    background-color: #fadbd8;
-    color: #c0392b;
-    align-self: center;
+  background-color: #fadbd8;
+  color: #c0392b;
+  align-self: center;
 }
 
 .controls {
-    display: flex;
-    gap: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
 }
 
 .controls.hidden {
-    display: none;
+  display: none;
 }
 
 input[type="text"] {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 button {
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
 }
 
 button:disabled {
-    background-color: #bdc3c7;
-    cursor: not-allowed;
+  background-color: #bdc3c7;
+  cursor: not-allowed;
 }
 
 .welcome-screen {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .welcome-screen input {
-    display: block;
-    margin: 20px auto;
-    width: 200px;
+  display: block;
+  margin: 20px auto;
+  width: 200px;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .date-separator {
-    text-align: center;
-    color: #7f8c8d;
-    font-size: 0.85rem;
-    margin: 20px 0;
-    position: relative;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  margin: 20px 0;
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .date-separator::before,
 .date-separator::after {
-    content: "";
-    display: inline-block;
-    width: 30px;
-    height: 1px;
-    background-color: #bdc3c7;
-    vertical-align: middle;
-    margin: 0 10px;
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background-color: #bdc3c7;
+  vertical-align: middle;
+  margin: 0 10px;
 }
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: calc(100vh - 60px);
-        margin-top: 0;
-        width: 100%;
-        max-width: 100%;
-    }
+  .container {
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 
-    .burger-btn {
-        display: block;
-    }
+  .burger-btn {
+    display: block;
+  }
 
-    .profile-panel {
-        position: fixed;
-        top: 60px;
-        right: -100%; /* Скрыто за экраном */
-        width: 80%;
-        height: calc(100vh - 60px);
-        background-color: white;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-        transition: right 0.3s ease;
-        z-index: 20;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+  .profile-panel {
+    position: fixed;
+    top: 60px;
+    right: -100%; /* Скрыто за экраном */
+    width: 80%;
+    height: calc(100vh - 60px);
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 20;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-    .profile-panel.active {
-        right: 0;
-        display: flex; /* Показываем при активации */
-    }
+  .profile-panel.active {
+    right: 0;
+    display: flex; /* Показываем при активации */
+  }
 
-    /* Затемнение фона при открытом меню */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 60px);
-        background: rgba(0,0,0,0.5);
-        z-index: 15;
-    }
+  /* Затемнение фона при открытом меню */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+  }
 
-    .overlay.active {
-        display: block;
-    }
+  .overlay.active {
+    display: block;
+  }
 
-    #game-container {
-        width: 100%;
-        border-right: none;
-        padding: 10px;
-    }
+  #game-container {
+    width: 100%;
+    border-right: none;
+    padding: 10px;
+  }
 
-    .message {
-        max-width: 95%;
-    }
+  .message {
+    max-width: 95%;
+  }
+
+  .controls {
+  }
+
+  input[type="text"] {
+    flex: 0;
+    margin: 0 auto;
+  }
+
+  #send-btn {
+    margin: 0 auto;
+  }
 }
