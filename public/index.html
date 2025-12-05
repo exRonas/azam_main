@@ -9,8 +9,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>Адал Азамат</h1>
-            <p>Интерактивная история о честности и выборе</p>
+            <div class="header-inner">
+                <button id="burger-btn" class="burger-btn" aria-label="Открыть меню" aria-expanded="false">☰</button>
+                <div class="title-wrap">
+                    <h1>Адал Азамат</h1>
+                    <p></p>
+                </div>
+            </div>
         </header>
 
         <main id="game-container">
@@ -47,6 +52,27 @@
                 </div>
             </div>
         </aside>
+
+        <!-- Выезжающее мобильное меню -->
+        <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+            <div class="drawer-content">
+                <div class="drawer-header">
+                    <span>Профиль</span>
+                    <button id="drawer-close" class="drawer-close" aria-label="Закрыть">×</button>
+                </div>
+                <div class="drawer-scroll">
+                    <div class="stats-group">
+                        <h3>Ценности</h3>
+                        <div id="values-list-mobile"></div>
+                    </div>
+                    <div class="stats-group">
+                        <h3>Проблемы</h3>
+                        <div id="problems-list-mobile"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="drawer-backdrop" id="drawer-backdrop"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

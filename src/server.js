@@ -350,7 +350,8 @@ app.get('/session/:id', async (req, res) => {
 });
 
 // Запуск сервера
-app.listen(PORT, () => {
+const HOST = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost');
+app.listen(PORT, HOST, () => {
     console.log(`Сервер запущен на порту ${PORT}`);
-    console.log(`Откройте http://localhost:${PORT} в браузере`);
+    console.log(`Откройте http://${HOST}:${PORT} в браузере`);
 });

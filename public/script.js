@@ -39,6 +39,74 @@ const STAT_NAMES = {
     wastefulness: "Расточительство"
 };
 
+// --- Burger & mobile drawer: глобальная инициализация ---
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerBtn = document.getElementById('burger-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerClose = document.getElementById('drawer-close');
+    const drawerBackdrop = document.getElementById('drawer-backdrop');
+
+    function openDrawer() {
+        if (!drawer || !burgerBtn) return;
+        drawer.classList.add('open');
+        burgerBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+        if (!drawer || !burgerBtn) return;
+        drawer.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (burgerBtn) burgerBtn.addEventListener('click', openDrawer);
+    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+});
+
+// Duplicate stats helpers (глобально)
+function renderStatItem(container, label, value) {
+    const item = document.createElement('div');
+    item.className = 'stat-item';
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'stat-label';
+    labelDiv.innerHTML = `<span>${label}</span><span>${value}%</span>`;
+    const barBg = document.createElement('div');
+    barBg.className = 'stat-bar-bg';
+    const barFill = document.createElement('div');
+    barFill.className = 'stat-bar-fill';
+    barFill.style.width = `${value}%`;
+    barBg.appendChild(barFill);
+    item.appendChild(labelDiv);
+    item.appendChild(barBg);
+    container.appendChild(item);
+}
+
+function updateStatsMobile(stats) {
+    const valuesMobile = document.getElementById('values-list-mobile');
+    const problemsMobile = document.getElementById('problems-list-mobile');
+    if (!valuesMobile || !problemsMobile) return;
+
+    valuesMobile.innerHTML = '';
+    problemsMobile.innerHTML = '';
+
+    // Values
+    renderStatItem(valuesMobile, 'Независимость и патриотизм', stats.independence_patriotism || 0);
+    renderStatItem(valuesMobile, 'Единство и солидарность', stats.unity_solidarity || 0);
+    renderStatItem(valuesMobile, 'Справедливость и ответственность', stats.justice_responsibility || 0);
+    renderStatItem(valuesMobile, 'Закон и порядок', stats.law_order || 0);
+    renderStatItem(valuesMobile, 'Трудолюбие и профессионализм', stats.hardwork_professionalism || 0);
+    renderStatItem(valuesMobile, 'Созидание и новаторство', stats.creativity_innovation || 0);
+
+    // Problems
+    renderStatItem(problemsMobile, 'Наркомания', stats.drug_addiction || 0);
+    renderStatItem(problemsMobile, 'Лудомания', stats.gambling_addiction || 0);
+    renderStatItem(problemsMobile, 'Вандализм', stats.vandalism || 0);
+    renderStatItem(problemsMobile, 'Религиозный экстремизм', stats.religious_extremism || 0);
+    renderStatItem(problemsMobile, 'Буллинг', stats.bullying || 0);
+    renderStatItem(problemsMobile, 'Насилие', stats.violence || 0);
+    renderStatItem(problemsMobile, 'Расточительство', stats.wastefulness || 0);
+}
+
 // Функция обновления UI статистики
 function updateStats(stats) {
     if (!stats) return;
@@ -46,6 +114,52 @@ function updateStats(stats) {
     profilePanel.classList.remove('hidden');
     valuesList.innerHTML = '';
     problemsList.innerHTML = '';
+
+        // Burger & mobile drawer logic (инициализируется глобально)
+
+        // Duplicate stats into mobile drawer
+        function renderStatItem(container, label, value) {
+            const item = document.createElement('div');
+            item.className = 'stat-item';
+            const labelDiv = document.createElement('div');
+            labelDiv.className = 'stat-label';
+            labelDiv.innerHTML = `<span>${label}</span><span>${value}%</span>`;
+            const barBg = document.createElement('div');
+            barBg.className = 'stat-bar-bg';
+            const barFill = document.createElement('div');
+            barFill.className = 'stat-bar-fill';
+            barFill.style.width = `${value}%`;
+            barBg.appendChild(barFill);
+            item.appendChild(labelDiv);
+            item.appendChild(barBg);
+            container.appendChild(item);
+        }
+
+        function updateStatsMobile(stats) {
+            const valuesMobile = document.getElementById('values-list-mobile');
+            const problemsMobile = document.getElementById('problems-list-mobile');
+            if (!valuesMobile || !problemsMobile) return;
+
+            valuesMobile.innerHTML = '';
+            problemsMobile.innerHTML = '';
+
+            // Values
+            renderStatItem(valuesMobile, 'Независимость и патриотизм', stats.independence_patriotism || 0);
+            renderStatItem(valuesMobile, 'Единство и солидарность', stats.unity_solidarity || 0);
+            renderStatItem(valuesMobile, 'Справедливость и ответственность', stats.justice_responsibility || 0);
+            renderStatItem(valuesMobile, 'Закон и порядок', stats.law_order || 0);
+            renderStatItem(valuesMobile, 'Трудолюбие и профессионализм', stats.hardwork_professionalism || 0);
+            renderStatItem(valuesMobile, 'Созидание и новаторство', stats.creativity_innovation || 0);
+
+            // Problems
+            renderStatItem(problemsMobile, 'Наркомания', stats.drug_addiction || 0);
+            renderStatItem(problemsMobile, 'Лудомания', stats.gambling_addiction || 0);
+            renderStatItem(problemsMobile, 'Вандализм', stats.vandalism || 0);
+            renderStatItem(problemsMobile, 'Религиозный экстремизм', stats.religious_extremism || 0);
+            renderStatItem(problemsMobile, 'Буллинг', stats.bullying || 0);
+            renderStatItem(problemsMobile, 'Насилие', stats.violence || 0);
+            renderStatItem(problemsMobile, 'Расточительство', stats.wastefulness || 0);
+        }
 
     for (const [key, value] of Object.entries(stats)) {
         const name = STAT_NAMES[key] || key;
@@ -72,6 +186,9 @@ function updateStats(stats) {
             valuesList.insertAdjacentHTML('beforeend', html);
         }
     }
+
+    // Обновляем мобильную панель
+    updateStatsMobile(stats);
 }
 
 async function startGame() {
