@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адал Азамат: Симулятор Жизни</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Адал Азамат</h1>
+            <p>Интерактивная история о честности и выборе</p>
+        </header>
+
+        <main id="game-container">
+            <div id="story-log" class="story-log">
+                <!-- Сюда будет добавляться текст истории -->
+                <div class="welcome-screen">
+                    <p>Добро пожаловать в симулятор.</p>
+                    <input type="text" id="username-input" placeholder="Введите ваше имя" />
+                    <input type="number" id="age-input" placeholder="Возраст (0)" min="0" max="100" value="0" style="margin-top: 10px;" />
+                    <button onclick="startGame()">Начать историю</button>
+                </div>
+            </div>
+
+            <div id="controls" class="controls hidden">
+                <input type="text" id="choice-input" placeholder="Ваше действие..." autocomplete="off">
+                <button id="send-btn" onclick="makeChoice()">Отправить</button>
+            </div>
+        </main>
+
+        <aside id="profile-panel" class="profile-panel hidden">
+            <h2>Профиль</h2>
+            
+            <div class="stats-group">
+                <h3>Ценности</h3>
+                <div id="values-list">
+                    <!-- JS заполнит -->
+                </div>
+            </div>
+
+            <div class="stats-group">
+                <h3>Проблемы</h3>
+                <div id="problems-list">
+                    <!-- JS заполнит -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

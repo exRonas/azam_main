@@ -1,0 +1,15 @@
+{
+  "name": "adal-azamat-game",
+  "version": "1.0.0",
+  "description": "Text-based life simulator based on Adal Azamat principles",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "openai": "^6.9.1",
+    "sqlite3": "^5.1.6"
+  }
+}
